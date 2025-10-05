@@ -155,15 +155,21 @@ namespace To_Do_List_Project
 
         private void btnEditTask_Click(object sender, EventArgs e)
         {
-            if (trvTasks.Nodes.Count == 0)
+             if (trvTasks.Nodes.Count == 0)
                 MessageBox.Show("Add a task first then you can edit", "Choose a task", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             if(trvTasks.SelectedNode.Checked)
                 MessageBox.Show("This task is finished , uncheck it to edit", "Finished Task", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
-                Form frmEditTask = new frmEditTask(trvTasks.SelectedNode.Text, trvTasks.SelectedNode.Nodes[0].Text);
-                frmEditTask.Show();
+                Form frmEdit;
+                if (!clsTask.IsChildNode(trvTasks.SelectedNode.Text,_FileName))
+                    frmEdit = new frmEditTask(trvTasks.SelectedNode.Text, trvTasks.SelectedNode.Nodes[0].Text);
+                                
+                else
+                    frmEdit = new frmEditTask(trvTasks.SelectedNode.Parent.Text, trvTasks.SelectedNode.Text);
+               
+                frmEdit.Show();
                 this.Close();
 
             }
@@ -270,5 +276,7 @@ namespace To_Do_List_Project
             timer1.Stop();
             this.Opacity = 1.0;
         }
+
+     
     }  
     }

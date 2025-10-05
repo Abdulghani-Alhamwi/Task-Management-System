@@ -24,8 +24,9 @@ namespace To_Do_List_Project
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            clsTask.SaveDataToFile(txtTask,txtDeadLine,_FileName);
-
+            if(clsTask.SaveDataToFile(txtTask,txtDeadLine,_FileName))
+            MessageBox.Show("Task Added Successfully", "Process Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnCancel_Click(sender,e);
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using To_Do_List_Project;
+using static System.Net.WebRequestMethods;
 
 namespace Core
 {
@@ -31,7 +32,11 @@ namespace Core
             List<stTaskInfo> lTasks = new List<stTaskInfo>();
             List<string> slTasks = new List<string>();
 
-            clsTask.stTaskInfo TaskInfo;
+            stTaskInfo TaskInfo;
+
+            if (!System.IO.File.Exists(FileName))
+               System.IO.File.WriteAllText(FileName,"");//auto dispose and clearer to use yhan using ()
+             
 
             using (StreamReader MyFile = new StreamReader(FileName))
             {
@@ -40,7 +45,8 @@ namespace Core
                 {
                     slTasks = Line.Split(new String[] { "#//#" }, StringSplitOptions.RemoveEmptyEntries).Where(s => !String.IsNullOrEmpty(s)).ToList();
                     TaskInfo.Task = slTasks.ElementAt(0);
-                    TaskInfo.DeadLine = slTasks.ElementAt(1);
+                     TaskInfo.DeadLine = slTasks.ElementAt(1);
+
                     if (slTasks.ElementAt(2) == "0")
                         TaskInfo.IsFinished = false;
                     else
@@ -79,7 +85,7 @@ namespace Core
                     }
                     else if (!Task.MarkForDelete && Task.IsFinished)
                     {
-                        MyFile.WriteLine(Task.Task + "#//#" + Task.DeadLine + "#//#" + +1);
+                        MyFile.WriteLine(Task.Task + "#//#" + Task.DeadLine + "#//#" + 1);
                     }
                 }
             }
@@ -115,7 +121,7 @@ namespace Core
             else
             {
 
-                File.Delete(FileName);
+                System.IO.File.Delete(FileName);
 
                 sender.Nodes.Clear();
 
@@ -186,18 +192,17 @@ namespace Core
             else
             {
                 List<stTaskInfo> lTasks = new List<stTaskInfo>();
-                lTasks = clsTask.LoadFileDate(FileName);
+                lTasks = LoadFileDate(FileName);
 
-                using (StreamWriter MyFile = new StreamWriter(FileName))
-                {
-                    foreach (stTaskInfo T in lTasks)
+                if(lTasks.Count == 0)
+                    System.IO.File.WriteAllText(FileName,Task.Text + "#//#" +DeadLine.Text + "#//#" + 0+ "\r\n");
+
+                else
+                    using (StreamWriter MyFile = new StreamWriter(FileName,true))
                     {
-                        if (!T.IsFinished)
-                            MyFile.WriteLine(T.Task + "#//#" + T.DeadLine + "#//#" + 0);
-                        else
-                            MyFile.WriteLine(T.Task + "#//#" + T.DeadLine + "#//#" + 1);
+                       MyFile.WriteLine(Task.Text + "#//#" + DeadLine.Text + "#//#" + 0);
+                          
                     }
-                }
                 return true;
 
             }
@@ -210,29 +215,44 @@ namespace Core
             public string CurrentDeadLine;
         }
 
-        internal static List<stTaskInfo> _EditTask(TextBox EditedTask, TextBox EditeDeadLine,stCurrentDetails Details,string FileName)
+        internal static bool _EditTask(TextBox EditedTask, TextBox EditeDeadLine, stCurrentDetails Details, string FileName)
         {
-            List<stTaskInfo> lTasks = new List<stTaskInfo>();
-
-            lTasks =LoadFileDate(FileName);
-
-            stTaskInfo NewTask;
-
-            for (short i = 0; i < lTasks.Count; i++)
+            if (String.IsNullOrWhiteSpace(EditedTask.Text) || String.IsNullOrWhiteSpace(EditeDeadLine.Text))
             {
-                if (lTasks[i].Task == Details.CurrentTask || lTasks[i].DeadLine == Details.CurrentDeadLine)
-                {
-                    NewTask.Task = EditedTask.Text;
-                    NewTask.DeadLine = EditeDeadLine.Text;
-                    NewTask.IsFinished = false;
-                    NewTask.MarkForDelete = false;
+                MessageBox.Show("Please enter task and deadline to add the task to your daily tasks", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    lTasks[i] = NewTask;
+                if (String.IsNullOrWhiteSpace(EditedTask.Text))
+                    EditedTask.Focus();
+                else
+                    EditeDeadLine.Focus();
 
-
-                }
+                return false;
             }
-            return lTasks;
+            else
+            {
+                List<stTaskInfo> lTasks = new List<stTaskInfo>();
+
+                lTasks = LoadFileDate(FileName);
+
+                stTaskInfo NewTask;
+
+                for (short i = 0; i < lTasks.Count; i++)
+                {
+                    if (lTasks[i].Task == Details.CurrentTask && lTasks[i].DeadLine == Details.CurrentDeadLine)
+                    {
+                        NewTask.Task = EditedTask.Text;
+                        NewTask.DeadLine = EditeDeadLine.Text;
+                        NewTask.IsFinished = false;
+                        NewTask.MarkForDelete = false;
+
+                        lTasks[i] = NewTask;
+
+
+                    }
+                }
+                _UpdateDataToFile(lTasks, FileName);
+                return true;
+            }
         }
 
         internal static void RecolorFirstCheckedNode(TreeView sender, Color Color)
@@ -247,6 +267,20 @@ namespace Core
             }
         }
 
-     
+        internal static bool IsChildNode(string NodeName, string _FileName)
+        {
+            List<stTaskInfo> lTasks = new List<stTaskInfo>();
+            lTasks = LoadFileDate(_FileName);
+
+            foreach (stTaskInfo Info in lTasks)
+            {
+                if (NodeName == Info.DeadLine)
+                    return true;
+            }
+            return false;
+
+        }
+
+
     }
 }

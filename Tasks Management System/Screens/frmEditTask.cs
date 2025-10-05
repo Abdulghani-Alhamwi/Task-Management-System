@@ -32,19 +32,20 @@ namespace To_Do_List_Project
 
         }
 
-        private bool Save()
+        private void Save()
         {
          
-            if(clsTask.SaveDataToFile(txtTask,txtDeadLine,_FileName))
+            if(clsTask._EditTask(txtTask, txtDeadLine, CurrentDetails, _FileName))
             {
             MessageBox.Show("Task Updated Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            
+                this.Close();
             Form frmDailyTasks = new frmDailyToDoTasks();
             frmDailyTasks.Show();
-
-                return true;
             }
-            return false;
+            else
+                MessageBox.Show("Please enter task and deadline to add the task to your daily tasks", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         private void frmEditTask_Load(object sender, EventArgs e)
@@ -64,8 +65,7 @@ namespace To_Do_List_Project
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(Save())
-            clsTask._EditTask(txtTask,txtDeadLine,CurrentDetails,_FileName);
+            Save();
             
         }
     }
