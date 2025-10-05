@@ -32,7 +32,7 @@ namespace To_Do_List_Project.Screens
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            clsUser._AddUser(txtUserName,txtUserName,_FileName);
+            clsUser._AddUser(txtUserName,txtPassword,_FileName);
             this.Close();
             MessageBox.Show("Added Successfully", "Successfully Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
