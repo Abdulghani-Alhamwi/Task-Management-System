@@ -122,7 +122,7 @@
             this.txtTask.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtTask.Font = new System.Drawing.Font("Tahoma", 22F, System.Drawing.FontStyle.Bold);
             this.txtTask.Location = new System.Drawing.Point(212, 146);
-            this.txtTask.MaxLength = 5000;
+            this.txtTask.MaxLength = 180;
             this.txtTask.Multiline = true;
             this.txtTask.Name = "txtTask";
             this.txtTask.Size = new System.Drawing.Size(478, 40);

@@ -98,7 +98,7 @@
             this.txtUserName.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtUserName.Font = new System.Drawing.Font("Tahoma", 22F, System.Drawing.FontStyle.Bold);
             this.txtUserName.Location = new System.Drawing.Point(246, 204);
-            this.txtUserName.MaxLength = 5000;
+            this.txtUserName.MaxLength = 50;
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(478, 43);
             this.txtUserName.TabIndex = 0;
