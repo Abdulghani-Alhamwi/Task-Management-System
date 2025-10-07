@@ -104,7 +104,7 @@
             this.numericupdownmin.Font = new System.Drawing.Font("Tahoma", 16F);
             this.numericupdownmin.Location = new System.Drawing.Point(255, 162);
             this.numericupdownmin.Maximum = new decimal(new int[] {
-            60000,
+            1440,
             0,
             0,
             0});

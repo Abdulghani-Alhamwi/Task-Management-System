@@ -18,7 +18,7 @@ namespace To_Do_List_Project
     {
         public frmTimer() => InitializeComponent();
 
-        private int TimeLeft { get; set; }
+        private long TimeLeft { get; set; }
 
         private MMDeviceEnumerator enumerator;
         private MMDevice device;
@@ -75,7 +75,8 @@ namespace To_Do_List_Project
             if (btnStart.Text == "Start")
             {
                 lblMinutes.Text = "Seconds Left :";
-                TimeLeft = 60 * Convert.ToInt32(numericupdownmin.Value);
+                TimeLeft = 60 * Convert.ToInt64(numericupdownmin.Value);
+                numericupdownmin.Maximum = TimeLeft;
                 timer1.Start();
                 btnStart.Text = "Stop";
             }
