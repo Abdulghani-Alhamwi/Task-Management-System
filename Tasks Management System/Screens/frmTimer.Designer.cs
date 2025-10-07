@@ -117,6 +117,7 @@
             this.numericupdownmin.Size = new System.Drawing.Size(289, 33);
             this.numericupdownmin.TabIndex = 0;
             this.numericupdownmin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericupdownmin.ThousandsSeparator = true;
             this.numericupdownmin.Value = new decimal(new int[] {
             1,
             0,

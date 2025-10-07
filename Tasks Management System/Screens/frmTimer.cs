@@ -63,7 +63,8 @@ namespace To_Do_List_Project
                         PlaySound(false);
                         btnStart.Text = "Start";
                         EnableControls(true);
-                    lblMinutes.Text = "Minutes";
+                        lblMinutes.Text = "Minutes";
+                    numericupdownmin.Maximum = 1440;
                     }
                 }
             
