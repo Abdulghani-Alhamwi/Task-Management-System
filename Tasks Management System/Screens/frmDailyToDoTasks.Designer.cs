@@ -74,7 +74,7 @@
             this.btnDeleteTask.Location = new System.Drawing.Point(73, 611);
             this.btnDeleteTask.Name = "btnDeleteTask";
             this.btnDeleteTask.Size = new System.Drawing.Size(232, 65);
-            this.btnDeleteTask.TabIndex = 2;
+            this.btnDeleteTask.TabIndex = 3;
             this.btnDeleteTask.Text = "Delete Task";
             this.btnDeleteTask.UseVisualStyleBackColor = false;
             this.btnDeleteTask.Click += new System.EventHandler(this.btnDeleteTask_Click);
@@ -89,7 +89,7 @@
             this.btnAddTask.Location = new System.Drawing.Point(585, 611);
             this.btnAddTask.Name = "btnAddTask";
             this.btnAddTask.Size = new System.Drawing.Size(232, 65);
-            this.btnAddTask.TabIndex = 3;
+            this.btnAddTask.TabIndex = 0;
             this.btnAddTask.Text = "Add Task";
             this.btnAddTask.UseVisualStyleBackColor = false;
             this.btnAddTask.Click += new System.EventHandler(this.btnAddTask_Click);
@@ -104,7 +104,7 @@
             this.btnBack.Location = new System.Drawing.Point(73, 719);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(154, 65);
-            this.btnBack.TabIndex = 8;
+            this.btnBack.TabIndex = 5;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -118,7 +118,7 @@
             this.btnEditTask.Location = new System.Drawing.Point(327, 611);
             this.btnEditTask.Name = "btnEditTask";
             this.btnEditTask.Size = new System.Drawing.Size(232, 65);
-            this.btnEditTask.TabIndex = 9;
+            this.btnEditTask.TabIndex = 2;
             this.btnEditTask.Text = "Edit Task";
             this.btnEditTask.UseVisualStyleBackColor = false;
             this.btnEditTask.Click += new System.EventHandler(this.btnEditTask_Click);
@@ -133,7 +133,7 @@
             this.btnDeleteAllTasks.Location = new System.Drawing.Point(535, 717);
             this.btnDeleteAllTasks.Name = "btnDeleteAllTasks";
             this.btnDeleteAllTasks.Size = new System.Drawing.Size(282, 69);
-            this.btnDeleteAllTasks.TabIndex = 10;
+            this.btnDeleteAllTasks.TabIndex = 4;
             this.btnDeleteAllTasks.Text = "Delete all tasks";
             this.btnDeleteAllTasks.UseVisualStyleBackColor = false;
             this.btnDeleteAllTasks.Click += new System.EventHandler(this.btnDeleteAllTasks_Click);
@@ -150,7 +150,7 @@
             this.btntreeviewcolor.Location = new System.Drawing.Point(779, 125);
             this.btntreeviewcolor.Name = "btntreeviewcolor";
             this.btntreeviewcolor.Size = new System.Drawing.Size(104, 77);
-            this.btntreeviewcolor.TabIndex = 11;
+            this.btntreeviewcolor.TabIndex = 1;
             this.btntreeviewcolor.Text = "Dark Mode";
             this.btntreeviewcolor.UseVisualStyleBackColor = false;
             this.btntreeviewcolor.Click += new System.EventHandler(this.btntreeviewcolor_Click);
