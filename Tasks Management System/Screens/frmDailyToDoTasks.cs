@@ -155,8 +155,11 @@ namespace To_Do_List_Project
 
         private void btnEditTask_Click(object sender, EventArgs e)
         {
-             if (trvTasks.Nodes.Count == 0)
+            if (trvTasks.Nodes.Count == 0)
+            {
                 MessageBox.Show("Add a task first then you can edit", "Choose a task", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             if(trvTasks.SelectedNode.Checked)
                 MessageBox.Show("This task is finished , uncheck it to edit", "Finished Task", MessageBoxButtons.OK, MessageBoxIcon.Information);
