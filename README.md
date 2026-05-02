@@ -10,7 +10,7 @@ All user data and tasks are stored locally in files, so nothing is lost after cl
 
 ---
 
-## 🔐 Login and Sign Up
+## 🔐 Login and Sign Up :
 
 - Login with username and password
 - Register new user accounts
@@ -18,7 +18,7 @@ All user data and tasks are stored locally in files, so nothing is lost after cl
 
 ---
 
-## 🏠 Main Page
+## 🏠 Main Page :
 
 - Opens after successful login
 - Navigate to Daily Task Management
@@ -26,7 +26,7 @@ All user data and tasks are stored locally in files, so nothing is lost after cl
 
 ---
 
-## 🗂️ Daily Task Management
+## 🗂️ Daily Task Management :
 
 - Add new tasks
 - Edit existing tasks
@@ -36,21 +36,21 @@ All user data and tasks are stored locally in files, so nothing is lost after cl
 
 ---
 
-## ⏱️ Timer
+## ⏱️ Timer :
 
 - Countdown timer with numeric input in minutes
 - Useful for focus sessions and break scheduling
 
 ---
 
-## 🔊 System Controls
+## 🔊 System Controls :
 
 - TrackBar displays the current system volume
 - Adjust system sound directly from the application
 
 ---
 
-## ⚙️ System Structure
+## ⚙️ System Structure :
 
 - Built with C# Windows Forms and .NET Framework 4.7.2
 - File based storage for users and tasks
@@ -59,7 +59,7 @@ All user data and tasks are stored locally in files, so nothing is lost after cl
 
 ---
 
-## 🚀 How to Run
+## 🚀 How to Run :
 
 1. Clone the repository
 2. Open the project in Visual Studio
