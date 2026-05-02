@@ -1,70 +1,76 @@
 # 📝 Task Management System
 
-A Windows Forms application built in C# for managing daily tasks.  
-Includes secure login, persistent storage, task management, a timer, and system volume control.  
-All user data and tasks are stored in files, so nothing is lost after closing the app.  
+A Windows Forms application built in C# for managing daily tasks with a clean and responsive interface.
+
+It includes secure login, persistent file storage, task management, a timer, and system volume control.
+
+The UI uses a dark black main theme with purple as the primary color and blue and gold as accent colors.
+
+All user data and tasks are stored locally in files, so nothing is lost after closing the app.
 
 ---
 
-## 🔑 Login & Sign Up
+## 🔐 Login and Sign Up
 
-- Login with username and password  
-- Register new accounts  
-- User credentials stored in files  
+- Login with username and password
+- Register new user accounts
+- Store user credentials in local files
 
 ---
 
 ## 🏠 Main Page
 
-- Entry point after login  
-- Option to open **Daily Task Management** page  
-- Option to open **Timer & System Control** page  
+- Opens after successful login
+- Navigate to Daily Task Management
+- Navigate to Timer and System Control
 
 ---
 
 ## 🗂️ Daily Task Management
 
-- Add new tasks  
-- Edit existing tasks  
-- Delete individual tasks  
-- Delete all tasks with one action  
-- Tasks saved permanently in files  
+- Add new tasks
+- Edit existing tasks
+- Delete individual tasks
+- Delete all tasks with one action
+- Save tasks permanently in files
 
 ---
 
 ## ⏱️ Timer
 
-- Numeric input to set countdown in minutes  
-- Helps user recharge or schedule breaks  
+- Countdown timer with numeric input in minutes
+- Useful for focus sessions and break scheduling
 
 ---
 
 ## 🔊 System Controls
 
-- TrackBar displays current system volume  
-- Adjust system sound directly from the app  
+- TrackBar displays the current system volume
+- Adjust system sound directly from the application
 
 ---
 
 ## ⚙️ System Structure
 
-- Built with **C# Windows Forms (.NET Framework 4.7.2)**  
-- File handling for storing users and tasks  
-- Modular form-based design for clear navigation  
+- Built with C# Windows Forms and .NET Framework 4.7.2
+- File based storage for users and tasks
+- Modular form based architecture for navigation
+- Responsive layout using docking and anchoring
 
 ---
 
 ## 🚀 How to Run
 
-1. Clone the repository  
-2. Open in **Visual Studio** targeting **.NET Framework 4.7.2**  
-3. Build and run  
+1. Clone the repository
+2. Open the project in Visual Studio
+3. Target .NET Framework 4.7.2
+4. Build and run the application
 
 ---
 
 ## 📌 Future Improvements
 
-- Encrypt stored credentials  
-- Add notifications for tasks  
-- Migrate storage to a database  
-- Enhance UI design  
+- Encrypt user credentials
+- Add task notifications
+- Move storage to a database
+- Improve UI animations and transitions
