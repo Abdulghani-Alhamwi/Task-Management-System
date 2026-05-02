@@ -11,18 +11,30 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using Core;
 using To_Do_List_Project.Screens;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace To_Do_List_Project
 {
     public partial class frmDailyToDoTasks : Form
     {
-        public frmDailyToDoTasks() => InitializeComponent();
+        Form frmProgramLife;
+        frmMain frmMainScreen;
+
+        bool CloseProgram = true;
+        public frmDailyToDoTasks(frmMain frmMain,Form frmFirst)
+        {
+            InitializeComponent();
+            frmProgramLife = frmFirst;
+            frmMainScreen = frmMain;
+        }
        
+        internal void RefreshTreeView()
+        {
+            trvTasks.Nodes.Clear();
+            _AddTasks();
+            ExpandAllNodes();
+        }
 
         private string _FileName = "Daily Tasks.txt";
 
@@ -57,15 +69,16 @@ namespace To_Do_List_Project
 
         private void btnAddTask_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Form frmNewTask = new frmNewTaskInfo();
+            this.Hide();
+            Form frmNewTask = new frmNewTaskInfo(this);
             frmNewTask.Show();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Form frmMainScreen = new frmMain();
             frmMainScreen.Show();
+            CloseProgram = false;
+            frmMainScreen.CloseProgram = true;
             this.Close();
         }
 
@@ -107,6 +120,7 @@ namespace To_Do_List_Project
         private void frmDailyToDoTasks_Load(object sender, EventArgs e)
         {
             this.Opacity = 0.0;
+         
             _AddTasks();
             ExpandAllNodes();
             //RecolorFirstCheckedNode(trvTasks,Color.LawnGreen);
@@ -124,10 +138,17 @@ namespace To_Do_List_Project
          private void _DeleteTask()
         {
             if (trvTasks.Nodes.Count == 0)
-            { MessageBox.Show("You did'nt set your daily tasks yet", "Choose a task", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-
-            else
             {
+                MessageBox.Show("You did'nt set your daily tasks yet", "Choose a task", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if(trvTasks.SelectedNode==null)
+            {
+                MessageBox.Show("You did'nt select task you want to delete", "Choose a task to delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+             
                 clsTask._DeleteTaskFromFile(trvTasks.SelectedNode.Text, _FileName);
 
                 foreach (TreeNode node in trvTasks.Nodes)
@@ -141,7 +162,7 @@ namespace To_Do_List_Project
                 }
                 trvTasks.SelectedNode.Parent.Remove();
             }
-        }
+        
 
         private void btnDeleteTask_Click(object sender, EventArgs e)
         {
@@ -161,19 +182,25 @@ namespace To_Do_List_Project
                 return;
             }
 
-            if(trvTasks.SelectedNode.Checked)
+            if (trvTasks.SelectedNode == null)
+            {
+                MessageBox.Show("You did'nt select task you want to edit", "Choose a task to edit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (trvTasks.SelectedNode.Checked)
                 MessageBox.Show("This task is finished , uncheck it to edit", "Finished Task", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
                 Form frmEdit;
                 if (!clsTask.IsChildNode(trvTasks.SelectedNode.Text,_FileName))
-                    frmEdit = new frmEditTask(trvTasks.SelectedNode.Text, trvTasks.SelectedNode.Nodes[0].Text);
+                    frmEdit = new frmEditTask(trvTasks.SelectedNode.Text, trvTasks.SelectedNode.Nodes[0].Text,this);
                                 
                 else
-                    frmEdit = new frmEditTask(trvTasks.SelectedNode.Parent.Text, trvTasks.SelectedNode.Text);
+                    frmEdit = new frmEditTask(trvTasks.SelectedNode.Parent.Text, trvTasks.SelectedNode.Text,this);
                
                 frmEdit.Show();
-                this.Close();
+                this.Hide();
 
             }
         }
@@ -274,12 +301,22 @@ namespace To_Do_List_Project
             frmLoad.Show();
         }
 
+        private void frmDailyToDoTasks_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(CloseProgram)
+                frmProgramLife.Close();
+           
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
             this.Opacity = 1.0;
         }
 
-     
+        private void frmDailyToDoTasks_MinimumSizeChanged(object sender, EventArgs e)
+        {
+            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2, (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
+        }
     }  
     }

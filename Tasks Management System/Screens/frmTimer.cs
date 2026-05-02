@@ -11,21 +11,28 @@ using System.Media;
 using System.Diagnostics;
 using NAudio.CoreAudioApi;
 using System.Xml;
+using To_Do_List_Project.Screens;
 
 namespace To_Do_List_Project
 {
     public partial class frmTimer : Form
     {
-        public frmTimer() => InitializeComponent();
-
+        Form frmProgramLife;
+        public frmTimer(Form frmProgramLifeControl)
+        {
+            InitializeComponent();
+            frmProgramLife = frmProgramLifeControl;
+        }
+        bool CloseProgram = true; 
         private long TimeLeft { get; set; }
 
         private MMDeviceEnumerator enumerator;
         private MMDevice device;
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Form frmMainScreen = new frmMain();
+            Form frmMainScreen = new frmMain(frmProgramLife);
             frmMainScreen.Show();
+            CloseProgram = false;
             this.Close();
         }
 
@@ -120,5 +127,12 @@ namespace To_Do_List_Project
             
         }
 
+        private void frmTimer_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (CloseProgram)
+            {
+                frmProgramLife.Close();
+            }
+        }
     }
 }

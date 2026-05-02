@@ -14,9 +14,11 @@ namespace To_Do_List_Project
 {
     public partial class frmNewTaskInfo : Form
     {
-        public frmNewTaskInfo()
+        frmDailyToDoTasks frmDailyTasks;
+        public frmNewTaskInfo(frmDailyToDoTasks frmDailyToDoTasks)
         {
             InitializeComponent();
+            frmDailyTasks = frmDailyToDoTasks;
         }
 
         private string _FileName = "Daily Tasks.txt";
@@ -30,7 +32,7 @@ namespace To_Do_List_Project
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Form frmDailyTasks = new frmDailyToDoTasks();
+            frmDailyTasks.RefreshTreeView();
             frmDailyTasks.Show();
             this.Close();
         }

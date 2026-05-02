@@ -42,12 +42,13 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(190)))));
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnCancel.Location = new System.Drawing.Point(30, 391);
+            this.btnCancel.Location = new System.Drawing.Point(42, 468);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(154, 65);
             this.btnCancel.TabIndex = 27;
@@ -57,11 +58,12 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSave.BackColor = System.Drawing.Color.Purple;
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSave.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnSave.Location = new System.Drawing.Point(353, 299);
+            this.btnSave.Location = new System.Drawing.Point(319, 362);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(205, 63);
             this.btnSave.TabIndex = 26;
@@ -71,9 +73,11 @@
             // 
             // txtDeadLine
             // 
+            this.txtDeadLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDeadLine.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtDeadLine.Font = new System.Drawing.Font("Tahoma", 22F, System.Drawing.FontStyle.Bold);
-            this.txtDeadLine.Location = new System.Drawing.Point(216, 207);
+            this.txtDeadLine.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
+            this.txtDeadLine.Location = new System.Drawing.Point(241, 207);
             this.txtDeadLine.MaxLength = 30;
             this.txtDeadLine.Multiline = true;
             this.txtDeadLine.Name = "txtDeadLine";
@@ -82,21 +86,25 @@
             // 
             // lblDeadLine
             // 
+            this.lblDeadLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDeadLine.AutoSize = true;
-            this.lblDeadLine.Font = new System.Drawing.Font("Tahoma", 22F, System.Drawing.FontStyle.Bold);
+            this.lblDeadLine.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.lblDeadLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblDeadLine.Location = new System.Drawing.Point(30, 207);
+            this.lblDeadLine.Location = new System.Drawing.Point(42, 207);
             this.lblDeadLine.Name = "lblDeadLine";
-            this.lblDeadLine.Size = new System.Drawing.Size(176, 36);
+            this.lblDeadLine.Size = new System.Drawing.Size(187, 39);
             this.lblDeadLine.TabIndex = 24;
             this.lblDeadLine.Text = "DeadLine :";
             // 
             // lblTasks
             // 
+            this.lblTasks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTasks.AutoSize = true;
             this.lblTasks.Font = new System.Drawing.Font("Tahoma", 28F, System.Drawing.FontStyle.Bold);
             this.lblTasks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblTasks.Location = new System.Drawing.Point(28, 138);
+            this.lblTasks.Location = new System.Drawing.Point(40, 138);
             this.lblTasks.Name = "lblTasks";
             this.lblTasks.Size = new System.Drawing.Size(134, 46);
             this.lblTasks.TabIndex = 23;
@@ -104,9 +112,11 @@
             // 
             // txtTask
             // 
+            this.txtTask.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTask.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtTask.Font = new System.Drawing.Font("Tahoma", 22F, System.Drawing.FontStyle.Bold);
-            this.txtTask.Location = new System.Drawing.Point(216, 145);
+            this.txtTask.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
+            this.txtTask.Location = new System.Drawing.Point(241, 145);
             this.txtTask.MaxLength = 180;
             this.txtTask.Multiline = true;
             this.txtTask.Name = "txtTask";
@@ -119,6 +129,7 @@
             // 
             // lblTitle
             // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
@@ -131,11 +142,13 @@
             // frmEditTask
             // 
             this.AcceptButton = this.btnSave;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Teal;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(800, 481);
+            this.ClientSize = new System.Drawing.Size(800, 579);
+            this.ControlBox = false;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtDeadLine);

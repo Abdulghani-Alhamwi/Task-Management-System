@@ -14,35 +14,34 @@ namespace To_Do_List_Project
 {
     public partial class frmMain : Form
     {
-        public frmMain() => InitializeComponent(); 
-
+        Form frmProgramLife;
+        internal bool CloseProgram = true;
+        public frmMain(Form frmFirst)
+        {
+            InitializeComponent();
+            frmProgramLife = frmFirst;
+        }
         private void btnViewDailyTasks_Click(object sender, EventArgs e)
         {
-            Form frmDailyTasks=new frmDailyToDoTasks();
+            Form frmDailyTasks=new frmDailyToDoTasks(this , frmProgramLife);
             this.Hide();
             frmDailyTasks.Show();
         }
 
-        private void btnAddNewDailyTasks_Click(object sender, EventArgs e)
-        {
-            Form frmDailyTasks = new frmDailyToDoTasks();
-            this.Hide();
-            frmDailyTasks.Show();
-        }
-
+      
         private void btnAddTimer_Click(object sender, EventArgs e)
         {
-            Form frmSetTimer=new frmTimer();
+            Form frmSetTimer=new frmTimer(frmProgramLife);
             this.Hide();
             frmSetTimer.Show();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void btn_LogOut_Click(object sender, EventArgs e)
         {
-            Form frmLogin = new frmLoginPage();
+            Form frmLogin = new frmLoginPage(frmProgramLife);
+            CloseProgram = false;
             this.Close();
             frmLogin.Show();
-
         }
 
         private void linklabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -53,5 +52,15 @@ namespace To_Do_List_Project
             //we can write : System.Diagnostics.Process.Start("https://www.linkedin.com/in/abdulghani-al-hamwi-96a325317");
         }
 
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(CloseProgram)
+            frmProgramLife.Close();
+        }
+
+        private void frmMain_MinimumSizeChanged(object sender, EventArgs e)
+        {
+            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2, (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
+        }
     }
 }

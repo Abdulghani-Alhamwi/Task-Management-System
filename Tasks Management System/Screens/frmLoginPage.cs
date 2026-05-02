@@ -11,18 +11,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Lib;
 using Core;
-using static To_Do_List_Project.frmDailyToDoTasks;
 
 namespace To_Do_List_Project.Screens
 {
     public  partial class frmLoginPage : Form
     {
-        public frmLoginPage() => InitializeComponent();
+        Form frmProgramLife;
+        public frmLoginPage(Form frmHiddenMainForm)
+        {
+            InitializeComponent();
+            frmProgramLife = frmHiddenMainForm;
+        }
 
         private string _FileName = "Users.txt";
 
 
         int _Logins = 3;
+        bool CloseProgram = true;
       
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -30,8 +35,9 @@ namespace To_Do_List_Project.Screens
             if(clsUser._CheckUserExists(txtUserName.Text,txtPassword.Text,_FileName))
             {
 
-            Form frmMainScreen = new frmMain();
+            Form frmMainScreen = new frmMain(frmProgramLife);
                 frmMainScreen.Show();
+                CloseProgram = false;
                 this.Close();
             }
             else
@@ -50,14 +56,14 @@ namespace To_Do_List_Project.Screens
         private void lblSignUp_Click(object sender, EventArgs e)
         {
             this.Hide();
-            this.Close();
-            Form frmLogin=new frmSignUp();
-            frmLogin.Show();
+            Form SignUp=new frmSignUp(this , frmProgramLife);
+            SignUp.Show();
+            this.ShowInTaskbar = false;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-           Application.Exit();
+            Application.Exit();
         }
 
         private void Validate_TextBox(object sender, CancelEventArgs e)
@@ -91,6 +97,42 @@ namespace To_Do_List_Project.Screens
         private void txtPassword_Validated(object sender, EventArgs e)
         {
             txtUserName.CausesValidation = true;
+        }
+
+        private void frmLoginPage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (CloseProgram)
+            frmProgramLife.Close();
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSignUp_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUserName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmLoginPage_MinimumSizeChanged(object sender, EventArgs e)
+        {
+            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2, (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
+
+        }
+
+        private void frmLoginPage_AutoSizeChanged(object sender, EventArgs e)
+        {
         }
     }
 }

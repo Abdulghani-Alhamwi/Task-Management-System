@@ -1,6 +1,6 @@
 ﻿namespace To_Do_List_Project.Screens
 {
-    partial class frmHiddenMainForm
+    partial class frmHiddenProgramLifeCycle
     {
         /// <summary>
         /// Required designer variable.

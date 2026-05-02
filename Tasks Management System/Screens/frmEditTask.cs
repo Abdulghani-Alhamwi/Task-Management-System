@@ -8,28 +8,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static To_Do_List_Project.frmDailyToDoTasks;
 using Core;
 
 namespace To_Do_List_Project
 {
     public partial class frmEditTask : Form
     {
-        public frmEditTask() => InitializeComponent();
-
+      
         private string _FileName = "Daily Tasks.txt";
-
-        
+                
         clsTask.stCurrentDetails CurrentDetails;
 
-        public frmEditTask(string CurrentTask, string CurrentDeadLine)
+        Form frmDailyTasks;
+        public frmEditTask(string CurrentTask, string CurrentDeadLine, frmDailyToDoTasks frmDailyToDoTasks)
         {
             //In C# : when we use parametrized constructor , the default constructor will not be called automatically , so we must put initialize component in the parametrized constructor.
             //In C++ : When we define parametrized constructor , it will automatically excecute default constructor first whether we define it or not and the it will excecute the parametrized constructor.
             InitializeComponent();
             CurrentDetails.CurrentTask = CurrentTask;
             CurrentDetails.CurrentDeadLine = CurrentDeadLine;
-
+            frmDailyTasks = frmDailyToDoTasks;
         }
 
         private void Save()
@@ -39,8 +37,8 @@ namespace To_Do_List_Project
             {
             MessageBox.Show("Task Updated Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
-                this.Close();
-            Form frmDailyTasks = new frmDailyToDoTasks();
+            this.Close();
+       
             frmDailyTasks.Show();
             }
             else
@@ -57,8 +55,6 @@ namespace To_Do_List_Project
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
-            Form frmDailyTasks = new frmDailyToDoTasks();
             frmDailyTasks.Show();
             this.Close();
         }

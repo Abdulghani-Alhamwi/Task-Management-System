@@ -19,13 +19,16 @@ namespace To_Do_List_Project.Screens
 
         private void frmLoading_Load(object sender, EventArgs e)
         {
-            progressBar1.Minimum = 0;
-            progressBar1.Maximum = 100;
-            progressBar1.Value = 0;
             timer1.Start();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
         {
             timer1.Stop();
             this.Close();

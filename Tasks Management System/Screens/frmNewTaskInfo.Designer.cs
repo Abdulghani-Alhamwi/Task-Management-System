@@ -37,15 +37,18 @@
             this.lblDeadLine = new System.Windows.Forms.Label();
             this.lblTasks = new System.Windows.Forms.Label();
             this.txtTask = new System.Windows.Forms.TextBox();
+            this.pnlResponsiveDesign = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.pnlResponsiveDesign.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNewTaskDetails
             // 
+            this.lblNewTaskDetails.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblNewTaskDetails.AutoSize = true;
             this.lblNewTaskDetails.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Bold);
             this.lblNewTaskDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblNewTaskDetails.Location = new System.Drawing.Point(239, 24);
+            this.lblNewTaskDetails.Location = new System.Drawing.Point(230, 24);
             this.lblNewTaskDetails.Name = "lblNewTaskDetails";
             this.lblNewTaskDetails.Size = new System.Drawing.Size(369, 48);
             this.lblNewTaskDetails.TabIndex = 2;
@@ -57,12 +60,13 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(190)))));
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnCancel.Location = new System.Drawing.Point(26, 392);
+            this.btnCancel.Location = new System.Drawing.Point(37, 450);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(154, 65);
             this.btnCancel.TabIndex = 20;
@@ -72,11 +76,12 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.btnConfirm.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnConfirm.BackColor = System.Drawing.Color.Purple;
             this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirm.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.btnConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnConfirm.Location = new System.Drawing.Point(349, 300);
+            this.btnConfirm.Location = new System.Drawing.Point(312, 353);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(205, 63);
             this.btnConfirm.TabIndex = 19;
@@ -86,32 +91,38 @@
             // 
             // txtDeadLine
             // 
+            this.txtDeadLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDeadLine.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtDeadLine.Font = new System.Drawing.Font("Tahoma", 22F, System.Drawing.FontStyle.Bold);
-            this.txtDeadLine.Location = new System.Drawing.Point(212, 208);
+            this.txtDeadLine.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
+            this.txtDeadLine.Location = new System.Drawing.Point(223, 208);
             this.txtDeadLine.MaxLength = 30;
             this.txtDeadLine.Multiline = true;
             this.txtDeadLine.Name = "txtDeadLine";
-            this.txtDeadLine.Size = new System.Drawing.Size(175, 40);
+            this.txtDeadLine.Size = new System.Drawing.Size(210, 40);
             this.txtDeadLine.TabIndex = 18;
             // 
             // lblDeadLine
             // 
+            this.lblDeadLine.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDeadLine.AutoSize = true;
-            this.lblDeadLine.Font = new System.Drawing.Font("Tahoma", 22F, System.Drawing.FontStyle.Bold);
+            this.lblDeadLine.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.lblDeadLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblDeadLine.Location = new System.Drawing.Point(26, 208);
+            this.lblDeadLine.Location = new System.Drawing.Point(31, 207);
             this.lblDeadLine.Name = "lblDeadLine";
-            this.lblDeadLine.Size = new System.Drawing.Size(176, 36);
+            this.lblDeadLine.Size = new System.Drawing.Size(187, 39);
             this.lblDeadLine.TabIndex = 17;
             this.lblDeadLine.Text = "DeadLine :";
             // 
             // lblTasks
             // 
+            this.lblTasks.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTasks.AutoSize = true;
             this.lblTasks.Font = new System.Drawing.Font("Tahoma", 28F, System.Drawing.FontStyle.Bold);
             this.lblTasks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblTasks.Location = new System.Drawing.Point(24, 139);
+            this.lblTasks.Location = new System.Drawing.Point(29, 143);
             this.lblTasks.Name = "lblTasks";
             this.lblTasks.Size = new System.Drawing.Size(134, 46);
             this.lblTasks.TabIndex = 16;
@@ -119,40 +130,53 @@
             // 
             // txtTask
             // 
+            this.txtTask.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTask.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtTask.Font = new System.Drawing.Font("Tahoma", 22F, System.Drawing.FontStyle.Bold);
-            this.txtTask.Location = new System.Drawing.Point(212, 146);
+            this.txtTask.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
+            this.txtTask.Location = new System.Drawing.Point(223, 146);
             this.txtTask.MaxLength = 180;
             this.txtTask.Multiline = true;
             this.txtTask.Name = "txtTask";
-            this.txtTask.Size = new System.Drawing.Size(478, 40);
+            this.txtTask.Size = new System.Drawing.Size(513, 40);
             this.txtTask.TabIndex = 15;
+            // 
+            // pnlResponsiveDesign
+            // 
+            this.pnlResponsiveDesign.AutoScroll = true;
+            this.pnlResponsiveDesign.Controls.Add(this.btnCancel);
+            this.pnlResponsiveDesign.Controls.Add(this.btnConfirm);
+            this.pnlResponsiveDesign.Controls.Add(this.txtDeadLine);
+            this.pnlResponsiveDesign.Controls.Add(this.lblDeadLine);
+            this.pnlResponsiveDesign.Controls.Add(this.lblTasks);
+            this.pnlResponsiveDesign.Controls.Add(this.txtTask);
+            this.pnlResponsiveDesign.Controls.Add(this.lblNewTaskDetails);
+            this.pnlResponsiveDesign.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlResponsiveDesign.Location = new System.Drawing.Point(0, 0);
+            this.pnlResponsiveDesign.Name = "pnlResponsiveDesign";
+            this.pnlResponsiveDesign.Size = new System.Drawing.Size(800, 545);
+            this.pnlResponsiveDesign.TabIndex = 21;
             // 
             // frmNewTaskInfo
             // 
             this.AcceptButton = this.btnConfirm;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Teal;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(800, 481);
+            this.ClientSize = new System.Drawing.Size(800, 554);
             this.ControlBox = false;
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.txtDeadLine);
-            this.Controls.Add(this.lblDeadLine);
-            this.Controls.Add(this.lblTasks);
-            this.Controls.Add(this.txtTask);
-            this.Controls.Add(this.lblNewTaskDetails);
+            this.Controls.Add(this.pnlResponsiveDesign);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(816, 520);
             this.MinimumSize = new System.Drawing.Size(816, 520);
             this.Name = "frmNewTaskInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Your Tasks";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.pnlResponsiveDesign.ResumeLayout(false);
+            this.pnlResponsiveDesign.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -166,5 +190,6 @@
         private System.Windows.Forms.Label lblDeadLine;
         private System.Windows.Forms.Label lblTasks;
         private System.Windows.Forms.TextBox txtTask;
+        private System.Windows.Forms.Panel pnlResponsiveDesign;
     }
 }

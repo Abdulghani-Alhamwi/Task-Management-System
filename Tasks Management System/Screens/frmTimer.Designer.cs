@@ -39,16 +39,20 @@
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.lblSystemVolume = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pnlResponsiveDesign = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numericupdownmin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.pnlResponsiveDesign.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTimer
             // 
+            this.lblTimer.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTimer.AutoSize = true;
+            this.lblTimer.BackColor = System.Drawing.Color.Transparent;
             this.lblTimer.Font = new System.Drawing.Font("Tahoma", 26F, System.Drawing.FontStyle.Bold);
             this.lblTimer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblTimer.Location = new System.Drawing.Point(32, 29);
+            this.lblTimer.Location = new System.Drawing.Point(31, 9);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(738, 42);
             this.lblTimer.TabIndex = 3;
@@ -61,10 +65,12 @@
             // 
             // lblSetTimer
             // 
+            this.lblSetTimer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSetTimer.AutoSize = true;
             this.lblSetTimer.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.lblSetTimer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.lblSetTimer.Location = new System.Drawing.Point(44, 156);
+            this.lblSetTimer.Location = new System.Drawing.Point(20, 136);
             this.lblSetTimer.Name = "lblSetTimer";
             this.lblSetTimer.Size = new System.Drawing.Size(186, 39);
             this.lblSetTimer.TabIndex = 4;
@@ -72,14 +78,15 @@
             // 
             // btnBack
             // 
-            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(190)))));
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBack.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnBack.Location = new System.Drawing.Point(39, 364);
+            this.btnBack.Location = new System.Drawing.Point(15, 358);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(154, 65);
+            this.btnBack.Size = new System.Drawing.Size(154, 59);
             this.btnBack.TabIndex = 9;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -87,11 +94,12 @@
             // 
             // btnStart
             // 
-            this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.btnStart.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnStart.BackColor = System.Drawing.Color.Purple;
             this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStart.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.btnStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnStart.Location = new System.Drawing.Point(293, 238);
+            this.btnStart.Location = new System.Drawing.Point(292, 230);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(205, 58);
             this.btnStart.TabIndex = 10;
@@ -101,8 +109,10 @@
             // 
             // numericupdownmin
             // 
+            this.numericupdownmin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.numericupdownmin.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.numericupdownmin.Location = new System.Drawing.Point(255, 162);
+            this.numericupdownmin.Location = new System.Drawing.Point(231, 144);
             this.numericupdownmin.Maximum = new decimal(new int[] {
             1440,
             0,
@@ -114,7 +124,7 @@
             0,
             0});
             this.numericupdownmin.Name = "numericupdownmin";
-            this.numericupdownmin.Size = new System.Drawing.Size(289, 33);
+            this.numericupdownmin.Size = new System.Drawing.Size(334, 33);
             this.numericupdownmin.TabIndex = 0;
             this.numericupdownmin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericupdownmin.ThousandsSeparator = true;
@@ -126,10 +136,12 @@
             // 
             // lblMinutes
             // 
+            this.lblMinutes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMinutes.AutoSize = true;
             this.lblMinutes.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
             this.lblMinutes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.lblMinutes.Location = new System.Drawing.Point(251, 136);
+            this.lblMinutes.Location = new System.Drawing.Point(227, 116);
             this.lblMinutes.Name = "lblMinutes";
             this.lblMinutes.Size = new System.Drawing.Size(86, 23);
             this.lblMinutes.TabIndex = 11;
@@ -138,9 +150,10 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.trackBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(100)))), ((int)(((byte)(190)))));
             this.trackBar1.LargeChange = 10;
-            this.trackBar1.Location = new System.Drawing.Point(667, 168);
+            this.trackBar1.Location = new System.Drawing.Point(688, 160);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -154,10 +167,12 @@
             // 
             // lblSystemVolume
             // 
+            this.lblSystemVolume.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSystemVolume.AutoSize = true;
             this.lblSystemVolume.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
             this.lblSystemVolume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.lblSystemVolume.Location = new System.Drawing.Point(610, 136);
+            this.lblSystemVolume.Location = new System.Drawing.Point(631, 116);
             this.lblSystemVolume.Name = "lblSystemVolume";
             this.lblSystemVolume.Size = new System.Drawing.Size(158, 23);
             this.lblSystemVolume.TabIndex = 13;
@@ -166,45 +181,56 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.label1.Location = new System.Drawing.Point(666, 373);
+            this.label1.Location = new System.Drawing.Point(687, 365);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 23);
             this.label1.TabIndex = 14;
             this.label1.Text = "100";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pnlResponsiveDesign
+            // 
+            this.pnlResponsiveDesign.AutoScroll = true;
+            this.pnlResponsiveDesign.Controls.Add(this.label1);
+            this.pnlResponsiveDesign.Controls.Add(this.lblSystemVolume);
+            this.pnlResponsiveDesign.Controls.Add(this.trackBar1);
+            this.pnlResponsiveDesign.Controls.Add(this.lblMinutes);
+            this.pnlResponsiveDesign.Controls.Add(this.numericupdownmin);
+            this.pnlResponsiveDesign.Controls.Add(this.btnStart);
+            this.pnlResponsiveDesign.Controls.Add(this.btnBack);
+            this.pnlResponsiveDesign.Controls.Add(this.lblSetTimer);
+            this.pnlResponsiveDesign.Controls.Add(this.lblTimer);
+            this.pnlResponsiveDesign.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlResponsiveDesign.Location = new System.Drawing.Point(0, 0);
+            this.pnlResponsiveDesign.Name = "pnlResponsiveDesign";
+            this.pnlResponsiveDesign.Size = new System.Drawing.Size(800, 439);
+            this.pnlResponsiveDesign.TabIndex = 15;
+            // 
             // frmTimer
             // 
             this.AcceptButton = this.btnStart;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Teal;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.CancelButton = this.btnBack;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.ControlBox = false;
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblSystemVolume);
-            this.Controls.Add(this.trackBar1);
-            this.Controls.Add(this.lblMinutes);
-            this.Controls.Add(this.numericupdownmin);
-            this.Controls.Add(this.btnStart);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.lblSetTimer);
-            this.Controls.Add(this.lblTimer);
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.Controls.Add(this.pnlResponsiveDesign);
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "frmTimer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manage Your Tasks";
+            this.Text = "Task Management System";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmTimer_FormClosed);
             this.Load += new System.EventHandler(this.frmTimer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericupdownmin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.pnlResponsiveDesign.ResumeLayout(false);
+            this.pnlResponsiveDesign.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -220,5 +246,6 @@
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label lblSystemVolume;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnlResponsiveDesign;
     }
 }

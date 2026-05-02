@@ -10,15 +10,15 @@ using System.Windows.Forms;
 
 namespace To_Do_List_Project.Screens
 {
-    public partial class frmHiddenMainForm : Form
+    public partial class frmHiddenProgramLifeCycle : Form
     {
-        public frmHiddenMainForm() => InitializeComponent();
+        public frmHiddenProgramLifeCycle() => InitializeComponent();
 
         private void frmHiddenMainForm_Load(object sender, EventArgs e)
         {
-            this.Hide();
             this.ShowInTaskbar = false;
-            Form frmLogin=new frmLoginPage();
+            this.Hide();
+            Form frmLogin=new frmLoginPage(this);
             frmLogin.Show();
         }
     }
