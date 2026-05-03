@@ -31,11 +31,10 @@ namespace To_Do_List_Project.Screens
       
         private void btnLogin_Click(object sender, EventArgs e)
         {
-  
-            if(clsUser._CheckUserExists(txtUserName.Text,txtPassword.Text,_FileName))
+            clsUser.stUserInfo CurrentUser = new clsUser.stUserInfo();
+            if(clsUser._CheckUserExists(txtUserName.Text,txtPassword.Text,_FileName,ref CurrentUser))
             {
-
-            Form frmMainScreen = new frmMain(frmProgramLife);
+            Form frmMainScreen = new frmMain(frmProgramLife,CurrentUser);
                 frmMainScreen.Show();
                 CloseProgram = false;
                 this.Close();

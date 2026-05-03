@@ -15,10 +15,12 @@ namespace To_Do_List_Project
     public partial class frmNewTaskInfo : Form
     {
         frmDailyToDoTasks frmDailyTasks;
-        public frmNewTaskInfo(frmDailyToDoTasks frmDailyToDoTasks)
+        clsUser.stUserInfo CurrentUser = new clsUser.stUserInfo();
+        public frmNewTaskInfo(frmDailyToDoTasks frmDailyToDoTasks, clsUser.stUserInfo CurrentUser)
         {
             InitializeComponent();
             frmDailyTasks = frmDailyToDoTasks;
+            this.CurrentUser = CurrentUser;
         }
 
         private string _FileName = "Daily Tasks.txt";
@@ -26,7 +28,7 @@ namespace To_Do_List_Project
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if(clsTask.SaveDataToFile(txtTask,txtDeadLine,_FileName))
+            if(clsTask.SaveDataToFile(txtTask,txtDeadLine, CurrentUser.UserName + _FileName))
             MessageBox.Show("Task Added Successfully", "Process Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnCancel_Click(sender,e);
         }

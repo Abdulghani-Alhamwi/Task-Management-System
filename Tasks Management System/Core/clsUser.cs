@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Core
 {
-    internal class clsUser
+    public class clsUser
     {
-        internal struct stUserInfo
+        public struct stUserInfo
         {
             public string UserName;
             public string Password;
@@ -120,7 +120,7 @@ namespace Core
         //    }
         //}
 
-        internal static bool _CheckUserExists(string UserName, string Password, string _FileName)
+        internal static bool _CheckUserExists(string UserName, string Password, string _FileName,ref stUserInfo CurrentUser)
         {
             List<stUserInfo> lUsers = new List<stUserInfo>();
             lUsers = LoadFileDate(_FileName);
@@ -128,7 +128,11 @@ namespace Core
             foreach (stUserInfo User in lUsers)
             {
                 if (User.UserName.ToUpper() == UserName.ToUpper() && User.Password == Password)
+                {
+                    CurrentUser = User;
                     return true;
+                }
+               
             }
             return false;
 

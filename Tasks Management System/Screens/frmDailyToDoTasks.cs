@@ -22,11 +22,14 @@ namespace To_Do_List_Project
         frmMain frmMainScreen;
 
         bool CloseProgram = true;
-        public frmDailyToDoTasks(frmMain frmMain,Form frmFirst)
+        clsUser.stUserInfo CurrentUser = new clsUser.stUserInfo();
+
+        public frmDailyToDoTasks(frmMain frmMain, Form frmFirst, clsUser.stUserInfo CurrentUser)
         {
             InitializeComponent();
             frmProgramLife = frmFirst;
             frmMainScreen = frmMain;
+            this.CurrentUser = CurrentUser;
         }
        
         internal void RefreshTreeView()
@@ -70,7 +73,7 @@ namespace To_Do_List_Project
         private void btnAddTask_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form frmNewTask = new frmNewTaskInfo(this);
+            Form frmNewTask = new frmNewTaskInfo(this,CurrentUser);
             frmNewTask.Show();
         }
 
@@ -89,7 +92,7 @@ namespace To_Do_List_Project
             {
                 if(Node.Checked)
                 {
-                    clsTask._TransferCheckedNode(trvTasks,Node,index,true,_FileName);
+                    clsTask._TransferCheckedNode(trvTasks,Node,index,true, CurrentUser.UserName+_FileName);
                 }
                 index++;
             }
@@ -98,10 +101,10 @@ namespace To_Do_List_Project
 
         private void _AddTasks()
         {
-            if (File.Exists(_FileName))
+            if (File.Exists(CurrentUser.UserName + _FileName))
             {
                 List<clsTask.stTaskInfo> lTasks = new List<clsTask.stTaskInfo>();
-                lTasks = clsTask.LoadFileDate(_FileName);
+                lTasks = clsTask.LoadFileDate(CurrentUser.UserName + _FileName);
 
                 foreach (clsTask.stTaskInfo Info in lTasks)
                 {
@@ -149,7 +152,7 @@ namespace To_Do_List_Project
                 return;
             }
              
-                clsTask._DeleteTaskFromFile(trvTasks.SelectedNode.Text, _FileName);
+                clsTask._DeleteTaskFromFile(trvTasks.SelectedNode.Text, CurrentUser.UserName + _FileName);
 
                 foreach (TreeNode node in trvTasks.Nodes)
                 {
@@ -171,7 +174,7 @@ namespace To_Do_List_Project
 
         private void btnDeleteAllTasks_Click(object sender, EventArgs e)
         {
-            clsTask.DeleteAllNodes(trvTasks, _FileName);
+            clsTask.DeleteAllNodes(trvTasks, CurrentUser.UserName + _FileName);
         }
 
         private void btnEditTask_Click(object sender, EventArgs e)
@@ -193,11 +196,11 @@ namespace To_Do_List_Project
             else
             {
                 Form frmEdit;
-                if (!clsTask.IsChildNode(trvTasks.SelectedNode.Text,_FileName))
-                    frmEdit = new frmEditTask(trvTasks.SelectedNode.Text, trvTasks.SelectedNode.Nodes[0].Text,this);
+                if (!clsTask.IsChildNode(trvTasks.SelectedNode.Text, CurrentUser.UserName + _FileName))
+                    frmEdit = new frmEditTask(trvTasks.SelectedNode.Text, trvTasks.SelectedNode.Nodes[0].Text,this, CurrentUser);
                                 
                 else
-                    frmEdit = new frmEditTask(trvTasks.SelectedNode.Parent.Text, trvTasks.SelectedNode.Text,this);
+                    frmEdit = new frmEditTask(trvTasks.SelectedNode.Parent.Text, trvTasks.SelectedNode.Text,this,CurrentUser);
                
                 frmEdit.Show();
                 this.Hide();
@@ -282,7 +285,7 @@ namespace To_Do_List_Project
 
             foreach (TreeNode Node in ((TreeView)sender).Nodes)
             {
-                clsTask._TransferCheckedNode(trvTasks, Node, Node.Index, Node.Checked, _FileName);
+                clsTask._TransferCheckedNode(trvTasks, Node, Node.Index, Node.Checked, CurrentUser.UserName + _FileName);
                  
                 foreach(TreeNode ChN in Node.Nodes)
                 {

@@ -20,7 +20,8 @@ namespace To_Do_List_Project
         clsTask.stCurrentDetails CurrentDetails;
 
         Form frmDailyTasks;
-        public frmEditTask(string CurrentTask, string CurrentDeadLine, frmDailyToDoTasks frmDailyToDoTasks)
+        clsUser.stUserInfo CurrentUser = new clsUser.stUserInfo();
+        public frmEditTask(string CurrentTask, string CurrentDeadLine, frmDailyToDoTasks frmDailyToDoTasks, clsUser.stUserInfo CurrentUser)
         {
             //In C# : when we use parametrized constructor , the default constructor will not be called automatically , so we must put initialize component in the parametrized constructor.
             //In C++ : When we define parametrized constructor , it will automatically excecute default constructor first whether we define it or not and the it will excecute the parametrized constructor.
@@ -28,12 +29,13 @@ namespace To_Do_List_Project
             CurrentDetails.CurrentTask = CurrentTask;
             CurrentDetails.CurrentDeadLine = CurrentDeadLine;
             frmDailyTasks = frmDailyToDoTasks;
+            this.CurrentUser = CurrentUser; 
         }
 
         private void Save()
         {
          
-            if(clsTask._EditTask(txtTask, txtDeadLine, CurrentDetails, _FileName))
+            if(clsTask._EditTask(txtTask, txtDeadLine, CurrentDetails, CurrentUser.UserName + _FileName))
             {
             MessageBox.Show("Task Updated Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             

@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Media;
-using System.Diagnostics;
-using NAudio.CoreAudioApi;
 using System.Xml;
+using Core;
+using NAudio.CoreAudioApi;
 using To_Do_List_Project.Screens;
 
 namespace To_Do_List_Project
@@ -18,10 +19,12 @@ namespace To_Do_List_Project
     public partial class frmTimer : Form
     {
         Form frmProgramLife;
-        public frmTimer(Form frmProgramLifeControl)
+        clsUser.stUserInfo CurrentUser;
+        public frmTimer(Form frmProgramLifeControl, clsUser.stUserInfo CurrentUser)
         {
             InitializeComponent();
             frmProgramLife = frmProgramLifeControl;
+            this.CurrentUser = CurrentUser;
         }
         bool CloseProgram = true; 
         private long TimeLeft { get; set; }
@@ -30,7 +33,7 @@ namespace To_Do_List_Project
         private MMDevice device;
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Form frmMainScreen = new frmMain(frmProgramLife);
+            Form frmMainScreen = new frmMain(frmProgramLife,CurrentUser);
             frmMainScreen.Show();
             CloseProgram = false;
             this.Close();

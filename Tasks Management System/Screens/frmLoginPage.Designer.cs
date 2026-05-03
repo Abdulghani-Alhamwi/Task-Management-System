@@ -150,7 +150,7 @@
             this.lblSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSignUp.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.lblSignUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(128)))));
-            this.lblSignUp.Location = new System.Drawing.Point(334, 633);
+            this.lblSignUp.Location = new System.Drawing.Point(334, 631);
             this.lblSignUp.Name = "lblSignUp";
             this.lblSignUp.Size = new System.Drawing.Size(140, 39);
             this.lblSignUp.TabIndex = 3;
