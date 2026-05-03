@@ -48,7 +48,7 @@ namespace To_Do_List_Project
             {
                 trvTasks.Nodes.Add(RootNodeTask);
                
-                trvTasks.Nodes[trvTasks.Nodes.Count - 1].ForeColor = Color.White;
+                trvTasks.Nodes[trvTasks.Nodes.Count - 1].ForeColor = Color.FromArgb(240,240,240);
                 trvTasks.Nodes[trvTasks.Nodes.Count - 1].NodeFont = new Font("Times New Roman", 22, FontStyle.Bold);
             
             }
@@ -56,7 +56,7 @@ namespace To_Do_List_Project
             if (ChildNodeDeadLine != null)
             {
                 trvTasks.Nodes[(trvTasks.Nodes.Count) - 1].Nodes.Add(ChildNodeDeadLine);
-                trvTasks.Nodes[(trvTasks.Nodes.Count) - 1].Nodes[(trvTasks.Nodes[(trvTasks.Nodes.Count) - 1].Nodes.Count) - 1].ForeColor = Color.White;
+                trvTasks.Nodes[(trvTasks.Nodes.Count) - 1].Nodes[(trvTasks.Nodes[(trvTasks.Nodes.Count) - 1].Nodes.Count) - 1].ForeColor = Color.FromArgb(240,240,240);
                 trvTasks.Nodes[trvTasks.Nodes.Count - 1].Nodes[trvTasks.Nodes[trvTasks.Nodes.Count - 1].Nodes.Count - 1].NodeFont = new Font("Times New Roman", 20, FontStyle.Bold);
             }              
                 if (isFinished)
@@ -93,7 +93,7 @@ namespace To_Do_List_Project
                 }
                 index++;
             }
-            clsTask.RecolorFirstCheckedNode(trvTasks, Color.LawnGreen);//because aftercheck worked here and did'nt handle the first Node BackColor so to reset it to green we called recolor here
+            clsTask.RecolorFirstCheckedNode(trvTasks, Color.DarkGreen);//because aftercheck worked here and did'nt handle the first Node BackColor so to reset it to green we called recolor here
         }
 
         private void _AddTasks()
@@ -210,10 +210,15 @@ namespace To_Do_List_Project
             if(Mode=="Light Mode")
             foreach(TreeNode Node in ((TreeView)sender).Nodes)
             {
-                    if(!Node.Checked)
-              Node.BackColor = Color.FromArgb(255, 250, 250, 250);
-              Node.ForeColor = Color.FromArgb(255, 18, 18, 18);
+                    if (!Node.Checked)
+                        Node.BackColor = Color.FromArgb(255, 235, 235, 235);
+                    else
+                        Node.BackColor = Color.LawnGreen;
 
+                    Node.ForeColor = Color.FromArgb(255, 18, 18, 18);
+
+                    trvTasks.LineColor = Color.Purple;
+                    btntreeviewcolor.FlatAppearance.BorderColor = Color.FromArgb(255,20,20,20);
 
                     foreach (TreeNode ChildNode in Node.Nodes)
                     {
@@ -226,8 +231,15 @@ namespace To_Do_List_Project
                 {
                     if (!Node.Checked)
                         Node.BackColor = Color.FromArgb(255, 18, 18, 18);
+                    else
+                        Node.BackColor = Color.DarkGreen;
+
                     Node.ForeColor = Color.FromArgb(255, 250, 250, 250);
-                   
+
+                    trvTasks.LineColor = Color.LawnGreen;
+
+                    btntreeviewcolor.FlatAppearance.BorderColor = Color.FromArgb(255,235,235,235);
+
 
                     foreach (TreeNode ChildNode in Node.Nodes)
                     {
@@ -243,17 +255,17 @@ namespace To_Do_List_Project
                 _CurrentMode = clsTask.enMode.DarkMode;
                 trvTasks.BackColor = Color.FromArgb(255, 18, 18, 18);
                 btntreeviewcolor.Text = "Dark Mode";
-                btntreeviewcolor.BackColor = Color.FromArgb(255, 18, 18, 18);
-                btntreeviewcolor.ForeColor = Color.FromArgb(255, 250, 250, 250);
+                btntreeviewcolor.BackColor = Color.Purple;
+                btntreeviewcolor.ForeColor = Color.FromArgb(255, 240, 240, 240);
                 ChangeNodesColorByMode(trvTasks, "Dark Mode");
             }
             else
             {
                 _CurrentMode = clsTask.enMode.LightMode;
-                trvTasks.BackColor = Color.FromArgb(255, 250, 250, 250);
+                trvTasks.BackColor = Color.FromArgb(255, 235, 235, 235);
                 btntreeviewcolor.Text = "Light Mode";
-                btntreeviewcolor.BackColor = Color.FromArgb(255, 250, 250, 250);
-                btntreeviewcolor.ForeColor = Color.FromArgb(255, 18, 18, 18);
+                btntreeviewcolor.BackColor = Color.Purple;
+                btntreeviewcolor.ForeColor = Color.FromArgb(255,240,240,240);
                 ChangeNodesColorByMode(trvTasks, "Light Mode");
             }
         }

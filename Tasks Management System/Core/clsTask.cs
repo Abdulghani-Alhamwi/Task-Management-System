@@ -161,7 +161,7 @@ namespace Core
         {
             if (Checked)
             {
-                Node.BackColor = Color.LawnGreen;
+                Node.BackColor = Color.DarkGreen;
                 sender.Nodes[index].Remove();
                 sender.Nodes.Add(Node);
                 _ChangeFileRecordbyRootNode(Node.Text, true,FileName);
