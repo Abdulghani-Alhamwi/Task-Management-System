@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDailyToDoTasks));
             this.trvTasks = new System.Windows.Forms.TreeView();
             this.lblDailyTasks = new System.Windows.Forms.Label();
             this.btnDeleteTask = new System.Windows.Forms.Button();
@@ -197,6 +198,7 @@
             this.Controls.Add(this.lblDailyTasks);
             this.Controls.Add(this.trvTasks);
             this.Controls.Add(this.pnlResponsiveDesign);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(913, 615);
             this.Name = "frmDailyToDoTasks";
             this.Opacity = 0D;

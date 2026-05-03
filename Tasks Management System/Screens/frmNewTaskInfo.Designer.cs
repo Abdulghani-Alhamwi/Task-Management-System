@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewTaskInfo));
             this.lblNewTaskDetails = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnCancel = new System.Windows.Forms.Button();
@@ -168,6 +169,7 @@
             this.ClientSize = new System.Drawing.Size(800, 554);
             this.ControlBox = false;
             this.Controls.Add(this.pnlResponsiveDesign);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(816, 520);
             this.Name = "frmNewTaskInfo";
