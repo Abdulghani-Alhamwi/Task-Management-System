@@ -68,6 +68,7 @@ namespace To_Do_List_Project.Screens
         private void btnBack_Click(object sender, EventArgs e)
         {
             CloseProgram = false;
+            allowcheck = false;
             this.Close();
             frmMainForm.Show();
         }
