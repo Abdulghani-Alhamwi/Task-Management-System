@@ -37,6 +37,7 @@ namespace To_Do_List_Project
             trvTasks.Nodes.Clear();
             _AddTasks();
             ExpandAllNodes();
+            trvTasks.Refresh();
         }
 
         private string _FileName = "Daily Tasks.txt";

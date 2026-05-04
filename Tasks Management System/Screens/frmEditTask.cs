@@ -19,7 +19,7 @@ namespace To_Do_List_Project
                 
         clsTask.stCurrentDetails CurrentDetails;
 
-        Form frmDailyTasks;
+        frmDailyToDoTasks frmDailyTasks;
         clsUser.stUserInfo CurrentUser = new clsUser.stUserInfo();
         public frmEditTask(string CurrentTask, string CurrentDeadLine, frmDailyToDoTasks frmDailyToDoTasks, clsUser.stUserInfo CurrentUser)
         {
@@ -40,8 +40,8 @@ namespace To_Do_List_Project
             MessageBox.Show("Task Updated Successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
             this.Close();
-       
-            frmDailyTasks.Show();
+             frmDailyTasks.RefreshTreeView();
+             frmDailyTasks.Show();
             }
             else
                 MessageBox.Show("Please enter task and deadline to add the task to your daily tasks", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -57,6 +57,7 @@ namespace To_Do_List_Project
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            
             frmDailyTasks.Show();
             this.Close();
         }
@@ -64,7 +65,6 @@ namespace To_Do_List_Project
         private void btnSave_Click(object sender, EventArgs e)
         {
             Save();
-            
         }
     }
 }
