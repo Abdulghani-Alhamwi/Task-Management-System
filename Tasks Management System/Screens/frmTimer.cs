@@ -48,7 +48,7 @@ namespace To_Do_List_Project
 
         private void PlaySound(bool Play=true)
         {
-            SoundPlayer Sound = new SoundPlayer("alarmSound.wav");
+            SoundPlayer Sound = new SoundPlayer(@"C:\Windows\Media\Alarm01.wav");
             if (Play)
             {
                 Sound.Play();

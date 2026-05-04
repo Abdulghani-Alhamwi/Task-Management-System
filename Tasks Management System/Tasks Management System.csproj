@@ -137,6 +137,12 @@
     <Compile Include="Screens\frmNewTaskInfo.Designer.cs">
       <DependentUpon>frmNewTaskInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\frmPowerCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmPowerCheck.Designer.cs">
+      <DependentUpon>frmPowerCheck.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\frmSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmNewTaskInfo.resx">
       <DependentUpon>frmNewTaskInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmPowerCheck.resx">
+      <DependentUpon>frmPowerCheck.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmSignUp.resx">
       <DependentUpon>frmSignUp.cs</DependentUpon>

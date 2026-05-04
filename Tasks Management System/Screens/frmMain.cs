@@ -67,5 +67,12 @@ namespace To_Do_List_Project
         {
             this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2, (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
         }
+
+        private void btnPowerCheck_Click(object sender, EventArgs e)
+        {
+            Form frmPower = new frmPowerCheck(frmProgramLife,this);
+            this.Hide();
+            frmPower.Show();
+        }
     }
 }

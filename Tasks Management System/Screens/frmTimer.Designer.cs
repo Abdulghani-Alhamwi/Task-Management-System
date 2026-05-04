@@ -53,7 +53,7 @@
             this.lblTimer.BackColor = System.Drawing.Color.Transparent;
             this.lblTimer.Font = new System.Drawing.Font("Tahoma", 26F, System.Drawing.FontStyle.Bold);
             this.lblTimer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblTimer.Location = new System.Drawing.Point(31, 9);
+            this.lblTimer.Location = new System.Drawing.Point(31, 24);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(738, 42);
             this.lblTimer.TabIndex = 3;
@@ -71,7 +71,7 @@
             this.lblSetTimer.AutoSize = true;
             this.lblSetTimer.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.lblSetTimer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.lblSetTimer.Location = new System.Drawing.Point(20, 136);
+            this.lblSetTimer.Location = new System.Drawing.Point(31, 146);
             this.lblSetTimer.Name = "lblSetTimer";
             this.lblSetTimer.Size = new System.Drawing.Size(186, 39);
             this.lblSetTimer.TabIndex = 4;
@@ -85,7 +85,7 @@
             this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBack.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnBack.Location = new System.Drawing.Point(15, 358);
+            this.btnBack.Location = new System.Drawing.Point(31, 359);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(154, 59);
             this.btnBack.TabIndex = 9;
@@ -100,7 +100,7 @@
             this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStart.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.btnStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnStart.Location = new System.Drawing.Point(292, 230);
+            this.btnStart.Location = new System.Drawing.Point(300, 242);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(205, 58);
             this.btnStart.TabIndex = 10;
@@ -113,7 +113,7 @@
             this.numericupdownmin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.numericupdownmin.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.numericupdownmin.Location = new System.Drawing.Point(231, 144);
+            this.numericupdownmin.Location = new System.Drawing.Point(235, 154);
             this.numericupdownmin.Maximum = new decimal(new int[] {
             1440,
             0,
@@ -142,7 +142,7 @@
             this.lblMinutes.AutoSize = true;
             this.lblMinutes.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
             this.lblMinutes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.lblMinutes.Location = new System.Drawing.Point(227, 116);
+            this.lblMinutes.Location = new System.Drawing.Point(231, 126);
             this.lblMinutes.Name = "lblMinutes";
             this.lblMinutes.Size = new System.Drawing.Size(86, 23);
             this.lblMinutes.TabIndex = 11;
@@ -154,7 +154,7 @@
             this.trackBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.trackBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.trackBar1.LargeChange = 10;
-            this.trackBar1.Location = new System.Drawing.Point(688, 160);
+            this.trackBar1.Location = new System.Drawing.Point(688, 170);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -173,7 +173,7 @@
             this.lblSystemVolume.AutoSize = true;
             this.lblSystemVolume.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
             this.lblSystemVolume.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.lblSystemVolume.Location = new System.Drawing.Point(631, 116);
+            this.lblSystemVolume.Location = new System.Drawing.Point(631, 126);
             this.lblSystemVolume.Name = "lblSystemVolume";
             this.lblSystemVolume.Size = new System.Drawing.Size(158, 23);
             this.lblSystemVolume.TabIndex = 13;
@@ -186,7 +186,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
-            this.label1.Location = new System.Drawing.Point(687, 365);
+            this.label1.Location = new System.Drawing.Point(687, 375);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 23);
             this.label1.TabIndex = 14;
