@@ -41,6 +41,8 @@ namespace To_Do_List_Project
             
             this.Close();
              frmDailyTasks.RefreshTreeView();
+             frmDailyTasks.NextMode = clsTask.enMode.LightMode;
+             frmDailyTasks.ChangeColors();
              frmDailyTasks.Show();
             }
             else

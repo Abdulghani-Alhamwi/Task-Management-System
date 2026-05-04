@@ -122,6 +122,7 @@
             this.linklabel.Name = "linklabel";
             this.linklabel.Size = new System.Drawing.Size(266, 34);
             this.linklabel.TabIndex = 10;
+            this.linklabel.TabStop = true;
             this.linklabel.Text = "Abdulghani Alhamwi";
             this.linklabel.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.linklabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklabel_LinkClicked);
@@ -162,7 +163,7 @@
             this.btnPowerCheck.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPowerCheck.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.btnPowerCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnPowerCheck.Location = new System.Drawing.Point(38, 542);
+            this.btnPowerCheck.Location = new System.Drawing.Point(50, 542);
             this.btnPowerCheck.Name = "btnPowerCheck";
             this.btnPowerCheck.Size = new System.Drawing.Size(308, 65);
             this.btnPowerCheck.TabIndex = 3;

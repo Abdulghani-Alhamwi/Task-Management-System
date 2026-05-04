@@ -53,7 +53,7 @@
             this.trvTasks.Indent = 50;
             this.trvTasks.ItemHeight = 40;
             this.trvTasks.LineColor = System.Drawing.Color.Lime;
-            this.trvTasks.Location = new System.Drawing.Point(-7, 137);
+            this.trvTasks.Location = new System.Drawing.Point(-7, 194);
             this.trvTasks.Name = "trvTasks";
             this.trvTasks.Size = new System.Drawing.Size(895, 462);
             this.trvTasks.TabIndex = 0;
@@ -65,7 +65,7 @@
             this.lblDailyTasks.AutoSize = true;
             this.lblDailyTasks.Font = new System.Drawing.Font("Tahoma", 44F, System.Drawing.FontStyle.Bold);
             this.lblDailyTasks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.lblDailyTasks.Location = new System.Drawing.Point(259, 16);
+            this.lblDailyTasks.Location = new System.Drawing.Point(259, 24);
             this.lblDailyTasks.Name = "lblDailyTasks";
             this.lblDailyTasks.Size = new System.Drawing.Size(364, 71);
             this.lblDailyTasks.TabIndex = 1;
@@ -78,7 +78,7 @@
             this.btnDeleteTask.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteTask.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.btnDeleteTask.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnDeleteTask.Location = new System.Drawing.Point(54, 675);
+            this.btnDeleteTask.Location = new System.Drawing.Point(54, 757);
             this.btnDeleteTask.Name = "btnDeleteTask";
             this.btnDeleteTask.Size = new System.Drawing.Size(232, 65);
             this.btnDeleteTask.TabIndex = 3;
@@ -94,7 +94,7 @@
             this.btnAddTask.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAddTask.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.btnAddTask.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnAddTask.Location = new System.Drawing.Point(609, 675);
+            this.btnAddTask.Location = new System.Drawing.Point(609, 757);
             this.btnAddTask.Name = "btnAddTask";
             this.btnAddTask.Size = new System.Drawing.Size(232, 65);
             this.btnAddTask.TabIndex = 0;
@@ -110,7 +110,7 @@
             this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBack.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnBack.Location = new System.Drawing.Point(54, 817);
+            this.btnBack.Location = new System.Drawing.Point(54, 893);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(154, 65);
             this.btnBack.TabIndex = 5;
@@ -125,7 +125,7 @@
             this.btnEditTask.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditTask.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.btnEditTask.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnEditTask.Location = new System.Drawing.Point(331, 675);
+            this.btnEditTask.Location = new System.Drawing.Point(331, 757);
             this.btnEditTask.Name = "btnEditTask";
             this.btnEditTask.Size = new System.Drawing.Size(232, 65);
             this.btnEditTask.TabIndex = 2;
@@ -141,7 +141,7 @@
             this.btnDeleteAllTasks.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnDeleteAllTasks.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold);
             this.btnDeleteAllTasks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnDeleteAllTasks.Location = new System.Drawing.Point(559, 813);
+            this.btnDeleteAllTasks.Location = new System.Drawing.Point(559, 889);
             this.btnDeleteAllTasks.Name = "btnDeleteAllTasks";
             this.btnDeleteAllTasks.Size = new System.Drawing.Size(282, 69);
             this.btnDeleteAllTasks.TabIndex = 4;
@@ -159,9 +159,9 @@
             this.btntreeviewcolor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btntreeviewcolor.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.btntreeviewcolor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.btntreeviewcolor.Location = new System.Drawing.Point(725, 167);
+            this.btntreeviewcolor.Location = new System.Drawing.Point(701, 115);
             this.btntreeviewcolor.Name = "btntreeviewcolor";
-            this.btntreeviewcolor.Size = new System.Drawing.Size(156, 77);
+            this.btntreeviewcolor.Size = new System.Drawing.Size(187, 79);
             this.btntreeviewcolor.TabIndex = 1;
             this.btntreeviewcolor.Text = "Dark Mode";
             this.btntreeviewcolor.UseVisualStyleBackColor = false;
@@ -183,7 +183,7 @@
             this.pnlResponsiveDesign.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlResponsiveDesign.Location = new System.Drawing.Point(0, 0);
             this.pnlResponsiveDesign.Name = "pnlResponsiveDesign";
-            this.pnlResponsiveDesign.Size = new System.Drawing.Size(897, 922);
+            this.pnlResponsiveDesign.Size = new System.Drawing.Size(897, 963);
             this.pnlResponsiveDesign.TabIndex = 6;
             // 
             // frmDailyToDoTasks
@@ -193,7 +193,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.CancelButton = this.btnBack;
-            this.ClientSize = new System.Drawing.Size(897, 928);
+            this.ClientSize = new System.Drawing.Size(897, 1008);
             this.Controls.Add(this.btntreeviewcolor);
             this.Controls.Add(this.lblDailyTasks);
             this.Controls.Add(this.trvTasks);

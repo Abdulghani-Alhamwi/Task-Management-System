@@ -35,6 +35,8 @@ namespace To_Do_List_Project
         private void btnCancel_Click(object sender, EventArgs e)
         {
             frmDailyTasks.RefreshTreeView();
+            frmDailyTasks.NextMode = clsTask.enMode.LightMode;
+            frmDailyTasks.ChangeColors();
             frmDailyTasks.Show();
             this.Close();
         }

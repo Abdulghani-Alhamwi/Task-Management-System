@@ -42,7 +42,7 @@ namespace To_Do_List_Project
 
         private string _FileName = "Daily Tasks.txt";
 
-        private clsTask.enMode _CurrentMode=clsTask.enMode.DarkMode;
+        internal clsTask.enMode NextMode=clsTask.enMode.LightMode;
 
         int TreeNodesCounter = 0;
 
@@ -127,6 +127,8 @@ namespace To_Do_List_Project
          
             _AddTasks();
             ExpandAllNodes();
+            ChangeColors();
+
             //RecolorFirstCheckedNode(trvTasks,Color.LawnGreen);
             //We Called Recolor function here to recolor the Checked nodes , because :
             /*
@@ -252,11 +254,11 @@ namespace To_Do_List_Project
                 }
         }
 
-        private void _ChangeColors()
+        public void ChangeColors()
         {
-            if (_CurrentMode == clsTask.enMode.LightMode)
+            if (NextMode == clsTask.enMode.LightMode)
             {
-                _CurrentMode = clsTask.enMode.DarkMode;
+                NextMode = clsTask.enMode.DarkMode;
                 trvTasks.BackColor = Color.FromArgb(255, 18, 18, 18);
                 btntreeviewcolor.Text = "Dark Mode";
                 btntreeviewcolor.BackColor = Color.Purple;
@@ -265,7 +267,7 @@ namespace To_Do_List_Project
             }
             else
             {
-                _CurrentMode = clsTask.enMode.LightMode;
+                NextMode = clsTask.enMode.LightMode;
                 trvTasks.BackColor = Color.FromArgb(255, 235, 235, 235);
                 btntreeviewcolor.Text = "Light Mode";
                 btntreeviewcolor.BackColor = Color.Purple;
@@ -276,7 +278,7 @@ namespace To_Do_List_Project
 
         private void btntreeviewcolor_Click(object sender, EventArgs e)
         {
-            _ChangeColors();
+            ChangeColors();
         }
 
 
