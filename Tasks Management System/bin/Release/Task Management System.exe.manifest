@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Task Management System.exe" size="266176">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Task Management System.exe" size="267200">
       <assemblyIdentity name="Task Management System" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>H4Mh5nwHgLUah8IWIAGulmM9CQYDLSa/A23iFHZWWYY=</dsig:DigestValue>
+        <dsig:DigestValue>80i0edFN1fJ2MWKP7rIOnIOwM3m0Hs/R1tGqVkLRpE8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

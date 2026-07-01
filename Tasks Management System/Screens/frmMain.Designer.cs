@@ -103,7 +103,7 @@
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogOut.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.btnLogOut.Location = new System.Drawing.Point(601, 644);
+            this.btnLogOut.Location = new System.Drawing.Point(581, 697);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(168, 52);
             this.btnLogOut.TabIndex = 4;
@@ -118,7 +118,7 @@
             this.linklabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.linklabel.Font = new System.Drawing.Font("Tahoma", 21F);
             this.linklabel.LinkColor = System.Drawing.Color.White;
-            this.linklabel.Location = new System.Drawing.Point(201, 653);
+            this.linklabel.Location = new System.Drawing.Point(201, 706);
             this.linklabel.Name = "linklabel";
             this.linklabel.Size = new System.Drawing.Size(266, 34);
             this.linklabel.TabIndex = 10;
@@ -133,7 +133,7 @@
             this.lblDeveloperName.AutoSize = true;
             this.lblDeveloperName.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.lblDeveloperName.ForeColor = System.Drawing.Color.White;
-            this.lblDeveloperName.Location = new System.Drawing.Point(38, 654);
+            this.lblDeveloperName.Location = new System.Drawing.Point(38, 706);
             this.lblDeveloperName.Name = "lblDeveloperName";
             this.lblDeveloperName.Size = new System.Drawing.Size(149, 33);
             this.lblDeveloperName.TabIndex = 11;
@@ -153,7 +153,7 @@
             this.pnlResponsiveDesign.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlResponsiveDesign.Location = new System.Drawing.Point(0, 0);
             this.pnlResponsiveDesign.Name = "pnlResponsiveDesign";
-            this.pnlResponsiveDesign.Size = new System.Drawing.Size(787, 705);
+            this.pnlResponsiveDesign.Size = new System.Drawing.Size(787, 758);
             this.pnlResponsiveDesign.TabIndex = 12;
             // 
             // btnPowerCheck
@@ -178,10 +178,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(787, 717);
+            this.ClientSize = new System.Drawing.Size(787, 790);
             this.Controls.Add(this.pnlResponsiveDesign);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(803, 39);
+            this.MinimumSize = new System.Drawing.Size(799, 53);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Your Tasks";

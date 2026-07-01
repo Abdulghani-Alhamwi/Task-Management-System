@@ -120,7 +120,11 @@ namespace To_Do_List_Project
         {
             trvTasks.ExpandAll();
         }
-
+        private void RecolorCheckedNodes()
+        {
+            RecolorCheckedNodeToShowThemFully(clsTask.enMode.DarkMode);
+            RecolorCheckedNodeToShowThemFully(clsTask.enMode.LightMode);
+        }
         private void frmDailyToDoTasks_Load(object sender, EventArgs e)
         {
             this.Opacity = 0.0;
@@ -128,6 +132,7 @@ namespace To_Do_List_Project
             _AddTasks();
             ExpandAllNodes();
             ChangeColors();
+           
 
             //RecolorFirstCheckedNode(trvTasks,Color.LawnGreen);
             //We Called Recolor function here to recolor the Checked nodes , because :
@@ -178,6 +183,7 @@ namespace To_Do_List_Project
         private void btnDeleteAllTasks_Click(object sender, EventArgs e)
         {
             clsTask.DeleteAllNodes(trvTasks, CurrentUser.UserName + _FileName);
+
         }
 
         private void btnEditTask_Click(object sender, EventArgs e)
@@ -254,7 +260,7 @@ namespace To_Do_List_Project
                 }
         }
 
-        public void ChangeColors()
+        internal void ChangeColors()
         {
             if (NextMode == clsTask.enMode.LightMode)
             {
@@ -281,11 +287,21 @@ namespace To_Do_List_Project
             ChangeColors();
         }
 
+        private void RecolorCheckedNodeToShowThemFully(clsTask.enMode Mode)
+        {
+            if (Mode == clsTask.enMode.LightMode)
+             NextMode = clsTask.enMode.DarkMode; 
+            
+            else
+                NextMode = clsTask.enMode.LightMode;
+
+            ChangeColors();
+
+        }
 
         bool _Transfer = true;
         internal void TransferToChecked(object sender)
         {
-
             foreach (TreeNode Node in ((TreeView)sender).Nodes)
             {
                 clsTask._TransferCheckedNode(trvTasks, Node, Node.Index, Node.Checked, CurrentUser.UserName + _FileName);
@@ -306,8 +322,10 @@ namespace To_Do_List_Project
 
         private void trvTasks_AfterCheck(object sender, TreeViewEventArgs e)
         {
-            if(_Transfer)
+           if(_Transfer)
             TransferToChecked(trvTasks);
+
+            ChangeColors();
 
         }
 

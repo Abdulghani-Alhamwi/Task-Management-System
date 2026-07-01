@@ -120,10 +120,13 @@ namespace Core
 
             else
             {
+                if (MessageBox.Show("Are you sure you want to delete all tasks ?", "Question", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                {
+                    System.IO.File.Delete(FileName);
 
-                System.IO.File.Delete(FileName);
+                    sender.Nodes.Clear();
 
-                sender.Nodes.Clear();
+                }
 
             }
     }
@@ -163,6 +166,7 @@ namespace Core
             {
                 Node.BackColor = Color.DarkGreen;
                 sender.Nodes[index].Remove();
+                
                 sender.Nodes.Add(Node);
                 _ChangeFileRecordbyRootNode(Node.Text, true,FileName);
             }
