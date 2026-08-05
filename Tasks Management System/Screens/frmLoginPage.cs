@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Lib;
 using Core;
+using System.Runtime.InteropServices;
 
 namespace To_Do_List_Project.Screens
 {
@@ -65,13 +66,35 @@ namespace To_Do_List_Project.Screens
             Application.Exit();
         }
 
+       //private const int WindowMessage_SYSCOMMAND = 0x0112;
+       //private const int SystemCommand_CLOSE = 0xF060;
+        Message _CurrentMessage;
+        protected override void WndProc(ref Message m)
+        {
+            _CurrentMessage = m;
+            /*
+             * Window is a form or a certain control from the Operating system perspective .
+             * wnp is the window procedure and it is a method to recieve and process the messages the are sent from windows to a specific window .
+             */
+            // if we click close button from the contol box not from a button implement this.Close() -> the following if condition be true :
+            //if (m.Msg == WindowMessage_SYSCOMMAND &&
+            //    (m.WParam.ToInt32() & 0xFFF0) == SystemCommand_CLOSE)
+            //{
+            //    MessageBox.Show("Close");
+            //    this.Close();
+            //    return;
+            //}
+
+            base.WndProc(ref m);
+        }
         private void Validate_TextBox(object sender, CancelEventArgs e)
         {
             if (((TextBox)sender).Tag == txtPassword.Tag)
                 txtUserName.CausesValidation = false;//this will not trigger validation when click on txtUserName
-                     
 
+            if(!(_CurrentMessage.Msg == 16)) // 16 is the window close message , when a window request to be closed -> it sends the message 16 in decimal .
             clsUtilControls.ValidateTextBox(sender, errorProvider1, e);
+            
         }
 
         private void frmLoginPage_Load(object sender, EventArgs e)

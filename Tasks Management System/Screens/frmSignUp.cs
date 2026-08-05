@@ -50,13 +50,32 @@ namespace To_Do_List_Project.Screens
             this.Close();
         }
 
+  
+        Message _CurrentMessage;
+        protected override void WndProc(ref Message m)
+        {
+            _CurrentMessage = m;
+            /*
+             * Window is a form or a certain control from the Operating system perspective .
+             * wnp is the window procedure and it is a method to recieve and process the messages the are sent from windows to a specific window .
+             */
+
+            base.WndProc(ref m);
+        }
+        
         private void ValidateTextBox(object sender,CancelEventArgs e)
         {
             if (((TextBox)sender).Tag == txtPassword.Tag)
                 txtUserName.CausesValidation = false;//txtUser name wont enter validation event function
-                    
 
-            clsUtilControls.ValidateTextBox(sender,errorProvider1,e);
+
+            if (!(_CurrentMessage.Msg == 16)) // 16 is the window close message in decimal , when the window is requested to close -> it sends a message that is 16 in decimal .
+                clsUtilControls.ValidateTextBox(sender, errorProvider1, e);
+            else
+            {
+                CloseProgram = true;
+                this.Close();
+            }
         }
 
         private void lblLogin_Click(object sender, EventArgs e)

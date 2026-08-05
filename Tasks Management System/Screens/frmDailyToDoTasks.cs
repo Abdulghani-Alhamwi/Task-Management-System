@@ -1,15 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Security.Cryptography;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Core;
 using To_Do_List_Project.Screens;
@@ -120,11 +112,6 @@ namespace To_Do_List_Project
         {
             trvTasks.ExpandAll();
         }
-        private void RecolorCheckedNodes()
-        {
-            RecolorCheckedNodeToShowThemFully(clsTask.enMode.DarkMode);
-            RecolorCheckedNodeToShowThemFully(clsTask.enMode.LightMode);
-        }
         private void frmDailyToDoTasks_Load(object sender, EventArgs e)
         {
             this.Opacity = 0.0;
@@ -159,7 +146,9 @@ namespace To_Do_List_Project
                 MessageBox.Show("You did'nt select task you want to delete", "Choose a task to delete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-             
+
+            if (MessageBox.Show("Are you sure you want to delete all tasks ?", "Question", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
                 clsTask._DeleteTaskFromFile(trvTasks.SelectedNode.Text, CurrentUser.UserName + _FileName);
 
                 foreach (TreeNode node in trvTasks.Nodes)
@@ -172,6 +161,7 @@ namespace To_Do_List_Project
 
                 }
                 trvTasks.SelectedNode.Parent.Remove();
+            }
             }
         
 

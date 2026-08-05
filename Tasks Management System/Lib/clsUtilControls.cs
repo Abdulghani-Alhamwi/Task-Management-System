@@ -11,6 +11,7 @@ namespace Lib
 {
     internal class clsUtilControls
     {
+
         private static void txtBox_Validating(object txtsender, object errorprovidersender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(((TextBox)txtsender).Text))
