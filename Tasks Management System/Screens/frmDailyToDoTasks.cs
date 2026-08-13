@@ -277,18 +277,6 @@ namespace To_Do_List_Project
             ChangeColors();
         }
 
-        private void RecolorCheckedNodeToShowThemFully(clsTask.enMode Mode)
-        {
-            if (Mode == clsTask.enMode.LightMode)
-             NextMode = clsTask.enMode.DarkMode; 
-            
-            else
-                NextMode = clsTask.enMode.LightMode;
-
-            ChangeColors();
-
-        }
-
         bool _Transfer = true;
         internal void TransferToChecked(object sender)
         {
@@ -314,9 +302,6 @@ namespace To_Do_List_Project
         {
            if(_Transfer)
             TransferToChecked(trvTasks);
-
-            ChangeColors();
-
         }
 
         private void frmDailyToDoTasks_Shown(object sender, EventArgs e)
